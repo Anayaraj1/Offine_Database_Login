@@ -37,6 +37,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Myclass>
         return new Myclass(v);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull Myclass holder, int position) {
 
@@ -63,6 +64,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Myclass>
                 TextView tv = d.findViewById(R.id.tv_delete_name);
                 Button btnyes=d.findViewById(R.id.btn_yes);
                 Button btnno=d.findViewById(R.id.btn_no);
+
+
                 tv.setText(m1.getUsername());
 
 
@@ -87,14 +90,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Myclass>
                 d.show();
             }
         });
-        holder.btnedit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i =new Intent(context,UpdateActivity.class);
-                i.putExtra("id",""+m1.getId());
-                context.startActivity(i);
-            }
-        });
+
     }
 
 
@@ -103,6 +99,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Myclass>
     public int getItemCount() {
         return al.size();
     }
+
     class Myclass extends RecyclerView.ViewHolder
     {
 
